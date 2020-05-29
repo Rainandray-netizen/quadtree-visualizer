@@ -28,10 +28,10 @@ class QuadTree {
     let w = this.boundary.w
     let h = this.boundary.h
 
-    let nw = new Rectangle(this.x + this.w / 2, this.y - this.h/2, this.w/2, this.h/2)
-    let ne = new Rectangle(this.x - this.w / 2, this.y - this.h/2, this.w/2, this.h/2)
-    let sw = new Rectangle(this.x + this.w / 2, this.y + this.h/2, this.w/2, this.h/2)
-    let se = new Rectangle(this.x - this.w / 2, this.y + this.h/2, this.w/2, this.h/2)
+    let ne = new Rectangle(x + w / 2, y - h/2, w/2, h/2)
+    let nw = new Rectangle(x - w / 2, y - h/2, w/2, h/2)
+    let se = new Rectangle(x + w / 2, y + h/2, w/2, h/2)
+    let sw = new Rectangle(x - w / 2, y + h/2, w/2, h/2)
    
     this.northwest = new QuadTree(nw)
     this.northeast = new QuadTree(ne)
