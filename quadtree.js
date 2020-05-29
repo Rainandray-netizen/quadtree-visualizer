@@ -23,6 +23,11 @@ class QuadTree {
   }
 
   subdivide() {
+    let x = this.boundary.x
+    let y = this.boundary.y
+    let w = this.boundary.w
+    let h = this.boundary.h
+
     let nw = new Rectangle(this.x + this.w / 2, this.y - this.h/2, this.w/2, this.h/2)
     let ne = new Rectangle(this.x - this.w / 2, this.y - this.h/2, this.w/2, this.h/2)
     let sw = new Rectangle(this.x + this.w / 2, this.y + this.h/2, this.w/2, this.h/2)
@@ -38,7 +43,10 @@ class QuadTree {
     if(this.points.length < this.capacity){
       this.points.push(point)
     } else {
-      this.subdivide()
+      if(!this.divided){
+        this.subdivide()
+        this.divided = true
+      }
     }
   }
 }
